@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashbord</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <!-- Projektuppgift av Gabriel och Charbel -->
+  <body>
+    <div class="page-title">
+      <h2><i class="fas fa-project-diagram"></i> Add New Project</h2>
+    </div>
+    <div class="add-btn">
+      <button onclick="openCreateModal()" id="create-card-button">
+        <i class="fas fa-plus-circle"></i>
+        New Project
+      </button>
+    </div>
+    <div><p id="response-message"></p></div>
+    <div class="container">
+      <table class="table">
+        <thead class="thead">
+          <tr>
+            <th>ID</th>
+            <th>Project name</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <hr />
+    <div id="posts"></div>
+    <div id="create-modal-wrapper">
+      <div class="create-modal">
+        <div class="modal-header">
+          <h3>Create a project</h3>
+          <span onclick="closeCreateModal()"
+            ><i class="far fa-times-circle"></i
+          ></span>
+        </div>
+        <div class="form-title">
+          <h2>New Project</h2>
+          <span>Use the below form to create a new project</span>
+        </div>
+        <div id="create-modal-content" required>
+          <form onsubmit="newPost(); return false;">
+            <input id="post-username" placeholder="Username" required />
+            <input id="post-email" placeholder="Email" required />
+            <input id="post-userid" placeholder="Project ID" required />
+            <input id="post-projectname" placeholder="Project Name" required />
+            <input
+              id="post-projectstatus"
+              placeholder="Project status"
+              required
+            />
+            <button onclick="closeCreateModalConfirmation()" type="submit">
+              <i class="fas fa-plus-circle"></i>
+              Add New Project
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
